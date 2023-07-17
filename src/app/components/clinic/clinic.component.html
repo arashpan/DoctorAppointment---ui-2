@@ -1,0 +1,47 @@
+<div class="container-fluid my-5">
+    <h1 class="mb-3">Patients List</h1>
+    <button type="button" class="btn btn-success" (click)="openAddModal(Add_Modal)">Add Patient</button>
+
+    <table class="table table-hover" *ngIf="datas && datas.length > 0">
+        <thead>
+            <tr>
+                <th scope="col">Name</th> 
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let patient of datas; let i = index">                
+                <th scope="row">{{ patient.patientNumber }}</th>
+                <td>{{ patient.Name }}</td> 
+                <td>
+                    <button type="button" class="btn btn-primary" >Edit</button>
+                    <button type="button" class="btn btn-danger" >Delete</button>
+                </td>
+            </tr>            
+        </tbody>
+    </table>
+    <h2 *ngIf="!datas || datas.length <= 0" class="color-red">No Patients Found</h2>
+  </div>
+ 
+
+  <ng-template #Add_Modal let-modal>
+	<div class="modal-header">
+		<h4 class="modal-title">Add Clinic</h4>
+		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+	</div>
+	<div class="modal-body">
+     
+            <div class="form-group">
+              <label for="exampleInputEmail1">Name</label>
+              <input type="text" class="form-control" [(ngModel)]="data.title" name="title"
+              id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Name">
+             </div>
+          
+      
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+		<button type="button" class="btn btn-success" (click)="save()" [disabled]="isDisabled">Save</button>
+	</div>
+</ng-template>
+
+ 

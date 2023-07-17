@@ -1,0 +1,128 @@
+<div class="container-fluid my-5">
+    <div class="row">
+        <div class="col-12 col-md-6">
+            <h1 class="mb-3">Patients List</h1>
+        </div>
+        <div class="col-12 col-md-6 text-end">
+            <button type="button" class="btn btn-success" (click)="openScrollableContent(longContent)">add</button>
+        </div>
+    </div>
+    <table class="table table-hover" *ngIf="patients && patients.length > 0">
+        <thead>
+            <tr>
+                <th scope="col">Number</th>
+                <th scope="col">National Code</th>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Clinic</th>
+                <!-- <th scope="col">Doctor</th> -->
+                <th scope="col">Date and Time</th>
+                <th scope="col">Phone Number</th>
+                <th scope="col">Edit or Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let patient of patients">                
+                <th scope="row">{{ patient.patientNumber }}</th>
+                <td>{{ patient.nationalCode }}</td>
+                <td>{{ patient.patientFirstName }}</td>
+                <td>{{ patient.patientLastName }}</td>
+                <td>{{ patient.clinicId }}</td>                
+                <td>{{ patient.dateTime }}</td>
+                <td>{{ patient.phone }}</td>
+                <td>
+                    <button type="button" class="btn btn-primary">Edit</button> |
+                     <button type="button" class="btn btn-danger">Delete</button>
+
+                </td>
+            </tr>            
+        </tbody>
+    </table>
+    <h2 *ngIf="!patients || patients.length <= 0" class="color-red">No Patients Found</h2>
+</div>
+
+
+
+<ng-template #longContent let-modal>
+	<div class="modal-header">
+		<h4 class="modal-title">Modal title</h4>
+		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+	</div>
+	<div class="modal-body">
+		<p>
+			Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam.
+			Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+		</p>
+		<p>
+			Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet
+			rutrum faucibus dolor auctor.
+		</p>
+		<p>
+			Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
+			Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.
+		</p>
+		<p>
+			Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam.
+			Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+		</p>
+		<p>
+			Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet
+			rutrum faucibus dolor auctor.
+		</p>
+		<p>
+			Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
+			Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.
+		</p>
+		<p>
+			Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam.
+			Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+		</p>
+		<p>
+			Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet
+			rutrum faucibus dolor auctor.
+		</p>
+		<p>
+			Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
+			Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.
+		</p>
+		<p>
+			Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam.
+			Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+		</p>
+		<p>
+			Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet
+			rutrum faucibus dolor auctor.
+		</p>
+		<p>
+			Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
+			Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.
+		</p>
+		<p>
+			Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam.
+			Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+		</p>
+		<p>
+			Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet
+			rutrum faucibus dolor auctor.
+		</p>
+		<p>
+			Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
+			Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.
+		</p>
+		<p>
+			Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam.
+			Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+		</p>
+		<p>
+			Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet
+			rutrum faucibus dolor auctor.
+		</p>
+		<p>
+			Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
+			Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.
+		</p>
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+	</div>
+</ng-template>
